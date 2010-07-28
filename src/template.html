@@ -1,0 +1,135 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="slippy-0.9.0.css" />
+<link rel="stylesheet" href="slippy-dark.css" />
+<link rel="stylesheet" href="highlighter/shCore.css" />
+<link rel="stylesheet" href="highlighter/shThemeEclipse.css" />
+<script src="jquery-1.4.2.min.js"></script>
+<script src="jquery.history.js"></script>
+<script src="slippy-0.9.0.js"></script>
+<script src="highlighter/shCore.js"></script>
+<script src="highlighter/shBrushBash.js"></script>
+<script src="highlighter/shBrushCpp.js"></script>
+<script src="highlighter/shBrushCSharp.js"></script>
+<script src="highlighter/shBrushCss.js"></script>
+<script src="highlighter/shBrushDelphi.js"></script>
+<script src="highlighter/shBrushDiff.js"></script>
+<script src="highlighter/shBrushGroovy.js"></script>
+<script src="highlighter/shBrushJava.js"></script>
+<script src="highlighter/shBrushJScript.js"></script>
+<script src="highlighter/shBrushPhp.js"></script>
+<script src="highlighter/shBrushPlain.js"></script>
+<script src="highlighter/shBrushPython.js"></script>
+<script src="highlighter/shBrushRuby.js"></script>
+<script src="highlighter/shBrushScala.js"></script>
+<script src="highlighter/shBrushSql.js"></script>
+<script src="highlighter/shBrushVb.js"></script>
+<script src="highlighter/shBrushXml.js"></script>
+<title>Slippy Documentation</title>
+<link rel="stylesheet" href="subtle.css" media="screen,tv,projection" />
+<link rel="stylesheet" href="print.css" media="print" />
+<link rel="stylesheet" href="alt.css" />
+<script src="run.js"></script>
+</head>
+<body>
+<div class="slide">
+<h1>Features New</h1>
+<ul class="incremental">
+<li>Incremental display of slide content</li>
+<li>One</li>
+<li>Two</li>
+<li>Three</li>
+</ul>
+</div>
+<div class="slide">
+<h1>Welcome to Slippy</h1>
+<h2>Usage</h2>
+<ul>
+<li>Navigation: [Left]/[Right] arrows to move, [Space] or [Double Click] to go to next slide</li>
+<li>Overview: [ESC]/[Del]/[Tab] to view, [Click] to pick one slide</li>
+<li>Jump: Press [0-9] keys followed by [Enter] to go straight to one slide</li>
+</ul>
+</div>
+<div class="slide">
+<h1>H1's are centered by default</h1>
+<div class="vcenter">
+<h2>The class "vcenter" on anything</h2>
+<ul>
+<li>centers it</li>
+<li>vertically</li>
+</ul>
+</div>
+</div>
+<div class="slide" layout="alt">
+<h1>Layouts</h1>
+<h2>This slide uses the "alt" layout</h2>
+<p>It inherits the class "nochrome" of the layout, which allows you to style it differently, and it doesn't have the footer div that the default layout has for example</p>
+<p>By default, all slides use the default layout if it's present</p>
+<p>Layouts must have a &lt;content&gt;&lt;/content&gt; tag that will be replaced by each slide's content</p>
+<pre class="brush: html">
+&lt;div class="slide" layout="alt"&gt;
+  Foo
+&lt;/div&gt;
+
+&lt;div class="layout" name="default"&gt;
+  &lt;h1&gt;Some title&lt;/h1&gt;
+  &lt;content&gt;&lt;/content&gt;
+  &lt;div class="footer"&gt;
+    Footer content
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="layout nochrome" name="alt"&gt;
+  &lt;content&gt;&lt;/content&gt;
+&lt;/div&gt;
+</pre>
+</div>
+<div class="slide">
+<h1>Syntax Highlighting</h1>
+<p>Code is just pre tags with class="brush: &lt;language&gt;"</p>
+<p>The eval class combined with the js brush makes that Execute link appear on the right</p>
+<pre class="brush: js eval">
+// in eval'd block, slide is the current slide
+$(slide).css('background', '#533');
+// and node is the code block
+$(node).css('opacity', '.1');
+</pre>
+<p>Nifty feature for JS devs doing presentations</p>
+<br />
+<p>Also if you use alert() in your code, it's piped into those nicer boxes</p>
+<pre class="brush: js eval">
+alert('test');
+</pre>
+<p>This is really great to provide interaction during a presentation</p>
+</div>
+<div class="slide">
+<h1>Syntax Highlighting</h1>
+<pre class="brush: php">
+function foo($var) {
+  // this is some php code as an example
+  $foo = new Class("meh");
+  $foo-&gt;bar();
+}
+</pre>
+<p>That's it for now, enjoy!</p>
+</div>
+<div class="layout" name="default">
+<content></content>
+<div class="footer">
+<span class="left">Masao YOKOYAMA</span>
+<span class="right">Slippy on <a href="http://github.com/kageroh/slippy">github</a>
+</span>
+<span class="left">Blog <a href="http://goo.gl/rZJa">hatena</a>
+</span>
+<span class="right">Twitter <a href="http://twitter.com/amasawa">@amasawa</a>
+</span>
+<hr class="defloat" />
+</div>
+</div>
+<div class="layout nochrome" name="alt">
+<content></content>
+</div>
+</body>
+</html>

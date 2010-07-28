@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="application/xslt+xml" href="slippy.xsl"?>
+<html>
+  <head>
+	<title>Slippy Documentation</title>
+	<link rel="stylesheet" href="subtle.css" media="screen,tv,projection" />
+	<link rel="stylesheet" href="print.css" media="print" />
+	<link rel="stylesheet" href="alt.css" />
+  </head>
+  <body>
+	<div class="slide">
+	  <h1>Features New</h1>
+	  <ul class="incremental">
+		<li>Incremental display of slide content</li>
+		<li>One</li>
+		<li>Two</li>
+		<li>Three</li>
+	  </ul>
+	</div>
+
+	<div class="slide">
+	  <h1>Welcome to Slippy</h1>
+	  <h2>Usage</h2>
+	  <ul>
+		<li>Navigation: [Left]/[Right] arrows to move, [Space] or [Double Click] to go to next slide</li>
+		<li>Overview: [ESC]/[Del]/[Tab] to view, [Click] to pick one slide</li>
+		<li>Jump: Press [0-9] keys followed by [Enter] to go straight to one slide</li>
+	  </ul>
+	</div>
+
+	<div class="slide">
+	  <h1>H1's are centered by default</h1>
+	  <div class="vcenter">
+		<h2>The class "vcenter" on anything</h2>
+		<ul>
+		  <li>centers it</li>
+		  <li>vertically</li>
+		</ul>
+	  </div>
+	</div>
+
+	<div class="slide" layout="alt">
+	  <h1>Layouts</h1>
+	  <h2>This slide uses the "alt" layout</h2>
+	  <p>It inherits the class "nochrome" of the layout, which allows you to style it differently, and it doesn't have the footer div that the default layout has for example</p>
+	  <p>By default, all slides use the default layout if it's present</p>
+	  <p>Layouts must have a &lt;content&gt;&lt;/content&gt; tag that will be replaced by each slide's content</p>
+<pre class="brush: html"><![CDATA[
+<div class="slide" layout="alt">
+  Foo
+</div>
+
+<div class="layout" name="default">
+  <h1>Some title</h1>
+  <content></content>
+  <div class="footer">
+    Footer content
+  </div>
+</div>
+
+<div class="layout nochrome" name="alt">
+  <content></content>
+</div>
+]]></pre>
+	</div>
+
+	<div class="slide">
+	  <h1>Syntax Highlighting</h1>
+	  <p>Code is just pre tags with class="brush: &lt;language&gt;"</p>
+	  <p>The eval class combined with the js brush makes that Execute link appear on the right</p>
+<pre class="brush: js eval"><![CDATA[
+// in eval'd block, slide is the current slide
+$(slide).css('background', '#533');
+// and node is the code block
+$(node).css('opacity', '.1');
+]]></pre>
+	  <p>Nifty feature for JS devs doing presentations</p>
+	  <br />
+	  <p>Also if you use alert() in your code, it's piped into those nicer boxes</p>
+<pre class="brush: js eval"><![CDATA[
+alert('test');
+]]></pre>
+	  <p>This is really great to provide interaction during a presentation</p>
+	</div>
+
+	<div class="slide">
+	  <h1>Syntax Highlighting</h1>
+<pre class="brush: php"><![CDATA[
+function foo($var) {
+  // this is some php code as an example
+  $foo = new Class("meh");
+  $foo->bar();
+}
+]]></pre>
+	  <p>That's it for now, enjoy!</p>
+	</div>
+
+	<div class="layout" name="default">
+	  <content />
+	  <div class="footer">
+		<span class="left">Masao YOKOYAMA</span>
+		<span class="right">Slippy on <a href="http://github.com/kageroh/slippy">github</a></span>
+		<span class="left">Blog <a href="http://goo.gl/rZJa">hatena</a></span>
+		<span class="right">Twitter <a href="http://twitter.com/amasawa">@amasawa</a></span>
+		<hr class="defloat" />
+	  </div>
+	</div>
+
+	<div class="layout nochrome" name="alt">
+	  <content />
+	</div>
+  </body>
+</html>
